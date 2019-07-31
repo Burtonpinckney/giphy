@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Giphy Assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="giphy.css">
     <style type="text/css">
         button,
@@ -24,7 +25,8 @@
             <div id="buttons-view"></div>
         </div>
         <div class="row">
-            <div id="addAnimal">
+            <div class="col-sm-8"></div>
+            <div id="addAnimal"class="col-sm-3">
                 <form id="gif-form">
                     <label for="gif-input">Add an animal!</label>
                     <input type="text" id="gif-input"><br>
@@ -35,11 +37,9 @@
             </div>
         </div>
         <!-- gifs will Get Dumped Here -->
-        <div class="row">
-            <div class="column">
+     
                 <div id="gifs-view"></div>
-            </div>
-        </div>
+        
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
@@ -59,9 +59,11 @@
                 }).then(function (response) {
                     $("#gifs-view").empty()
                     console.log(response);
+                    $("#gifs-view").html('<div class="row holder">')
                     for (let i = 0; i < response.data.length; i++) {
                         console.log('test')
                         var newDiv = $("<div>");
+                        newDiv.addClass("col-sm-3")
                         var par = $("<p>");
                         par.text("Ratings: " + response.data[i].rating)
                         var gifImage = $("<img>")
@@ -71,7 +73,7 @@
                         gifImage.attr("data-state", "still")
                         gifImage.addClass("image")
                         newDiv.append(gifImage, par)
-                        $("#gifs-view").append(newDiv)
+                        $(".holder").append(newDiv)
 
                     }
                 });

@@ -2,14 +2,15 @@ body {
     background-color: silver;
 }
 
-.button {
+button {
     background-color: lightseagreen;
+    color: white;
 }
     
-#addAnimal {
+/* #addAnimal {
     float: right;
-}
+} */
 
-#gifs-view {
-    float: inline-end;
-}
+/* #gifs-view {
+    display: block;
+} */
