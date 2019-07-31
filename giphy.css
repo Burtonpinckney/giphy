@@ -1,0 +1,15 @@
+body {
+    background-color: silver;
+}
+
+.button {
+    background-color: lightseagreen;
+}
+    
+#addAnimal {
+    float: right;
+}
+
+#gifs-view {
+    float: inline-end;
+}
